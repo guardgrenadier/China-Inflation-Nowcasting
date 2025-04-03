@@ -33,6 +33,7 @@ def plot_compare(history, forecast, title, line_width=3.0, font_size='xx-large',
     # 添加 y=0 的实线
     plt.axhline(0, color='black', linestyle='-', linewidth=1, label='diff = 0')
 
+    os.makedirs(dir, exist_ok=True)
     plt.savefig(os.path.join(dir, f"{title}.jpg"))
     plt.show()
 
