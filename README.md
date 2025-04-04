@@ -7,14 +7,14 @@ You can run 'main.py' first which performs backtest of monthly forecasting of Ch
 After running 'main.py', you can run 'backtest_error_analysis.py' to evaluate the backtest results.
 Finally running 'CPI_backtest_daily' to use the 'Nowcasting' function. Note that this file is independent of the 2 files above.
 
-All necessary data are uploaded here in the './data' directory, which are up to 2024/12/31/
+All necessary data are uploaded here in the './data' directory, which are up to 2024/12/31.
 
 If you want to find more details of this project, check the PDF file.
 
 ## main.py
 Running this file will perform a backtest of forecasting China's inflation at the the ot the month during a selected time period. What the 'forecasting' means here is that since China officially anounces a certain month's CPI/PPI on roughly 8th day in the following month, this model forecast china's inflation at the end of the month, or in other words, one week inadvance. Thus this model can help with making investment decisions.  
 
-This project provides 2 methods of estimating the parameters of DFM, you can change between them by changing the parameter 'alt_method'. The 2 methods differ in how the model converges. The method under 'alt_method=False', or the default method, is illustrated in the PDF. While the method under 'alt_method=False' is described in the research report from HUATAI, with a slight difference in terms of the number of latent factors and the use of Kalman Filter here. 
+This project provides 2 methods of estimating the parameters of DFM, you can change between them by changing the parameter 'alt_method'. The 2 methods differ in how the model converges. The method under 'alt_method=False', or the default method, is illustrated in the PDF. While the method under 'alt_method=True' is described in the research report from HUATAI, with a slight difference in terms of the number of latent factors and the use of Kalman Filter here. 
 
 ## backtest_error_analysis.py
 Running this file will perform a error analysis of the results of forecasting backtest produced in 'main.py', so you have to run 'main.py' before running this file. This file will produced 3 graphs and 4 lines in your terminal -- 1 error histogram of the backtest result, 1 error histogram of Wind CPI/PPI expectation, 1 line chart comparing Wind CPI/PPI expectation with Actual CPI/PPI, 2 lines of the R2 and direction correctness of forecast for backtest result and Wind expectation each.
